@@ -435,12 +435,12 @@ server <- function(input, output) {
     
     #negative
     output$neg2type2 <- renderPrint({
-      cs$a[dat$b$Nos[1:input$how_many_comments]]
+      cs$b[dat$b$Nos[1:input$how_many_comments]]
     })
     
     #positive
     output$pos2type2 <- renderPrint({
-      cs$a[dat$b$Nos[(nrow(dat$b)-(input$how_many_comments-1)):nrow(dat$b)]]
+      cs$b[dat$b$Nos[(nrow(dat$b)-(input$how_many_comments-1)):nrow(dat$b)]]
     })
     
     output$score2type2 <- renderPrint({
