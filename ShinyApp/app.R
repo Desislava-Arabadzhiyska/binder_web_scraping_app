@@ -108,7 +108,7 @@ server <- function(input, output) {
     ncs <- list()
     
     rs_driver_object <- rsDriver(browser = 'chrome',
-                                 chromever = '106.0.5249.61',
+                                 #chromever = '106.0.5249.61',
                                  port = free_port())#to check which versions are available: binman::list_versions("chromedriver")
     #activate client
     remDr <- rs_driver_object$client
