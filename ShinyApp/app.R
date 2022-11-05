@@ -3,7 +3,7 @@
 #Parts of this script are based on the tutorial by Samer Hijjazi (https://www.youtube.com/watch?v=U1BrIPmhx10)
 #other parts are based on the Data Science Dojo tutorial (https://www.youtube.com/watch?v=NwtxrbqE2Gc)
 #as well as Cosima Meyer's tutorial (https://www.youtube.com/watch?v=bvqur70ZmyM)
-
+#https://mybinder.org/v2/gh/Desislava-Arabadzhiyska/binder_web_scraping_app/main?urlpath=shiny/ShinyApp/
 #Load packages
 library("tidyverse")#for data tidying etc.
 library("RSelenium")#for interacting with the webpage
@@ -31,9 +31,9 @@ ui <- fluidPage(
       # uiOutput("actual_results")
       numericInput("how_many_comments", "Display top n comments from sentiment analysis", min = 1, value = 5),
       numericInput("n_topics", "Topics to estimate", min = 2, value = 3),
-      numericInput("which_topic", "Display topic", min = 1, value = 1),
       numericInput("how_many_on_topic_plot", "Words per topic", min = 3, value = 5),
-      numericInput("n_display_coms_per_top", "Display top n comments per topic", min = 1, value = 3)
+      numericInput("which_topic", "Display topic", min = 1, value = 1),
+      numericInput("n_display_coms_per_top", "Display top n comments from selected topic", min = 1, value = 3)
     ),
     
     # Show a plot of the generated distribution
@@ -101,13 +101,13 @@ server <- function(input, output) {
     
     #storage
     
-    mydfm <- list()
-    freq_dat <- list()
-    model.stm <- list()
-    reduced_comments <-list()
-    ncs <- list()
+    # mydfm <- list()
+    # freq_dat <- list()
+    # model.stm <- list()
+    # reduced_comments <-list()
+    # ncs <- list()
     
-    rs_driver_object <- rsDriver(browser = 'chrome',
+    rs_driver_object <- rsDriver(browser = 'firefox',
                                  #chromever = '106.0.5249.61',
                                  port = free_port())#to check which versions are available: binman::list_versions("chromedriver")
     #activate client
@@ -360,7 +360,7 @@ server <- function(input, output) {
         )
       })
       
-      output$topic_comments_text1 <- renderText({
+      output$topic_comments_text1 <- renderPrint({
         
         a <- findThoughts(
           model.stm$a,
@@ -368,7 +368,12 @@ server <- function(input, output) {
           n = input$n_display_coms_per_top,
           topics = input$which_topic
         )
-        unlist(a[[2]])
+        b <- unlist(a[[2]][[1]])
+        d <- c()
+        for (i in 1: input$n_display_coms_per_top){
+          d <- append(d, b[[i]])
+        }
+        d
       })
 
     #####################################
@@ -494,7 +499,7 @@ server <- function(input, output) {
         )
       })
       
-      output$topic_comments_text2 <- renderText({
+      output$topic_comments_text2 <- renderPrint({
 
         a <- findThoughts(
           model.stm$b,
@@ -502,7 +507,12 @@ server <- function(input, output) {
           n = input$n_display_coms_per_top,
           topics = input$which_topic
         )
-        unlist(a[[2]])
+        b <- unlist(a[[2]][[1]])
+        d <- c()
+        for (i in 1: input$n_display_coms_per_top){
+          d <- append(d, b[[i]])
+        }
+        d
       })
 
     
