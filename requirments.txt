@@ -1,5 +1,0 @@
-webdriverdownloader
-
-selenium
-
-pandas
