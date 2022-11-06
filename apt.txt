@@ -1,3 +1,4 @@
+apt-transport-https
 ca-certificates-java
 openjdk-17-jre-headless
 firefox
