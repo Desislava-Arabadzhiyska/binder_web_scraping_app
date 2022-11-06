@@ -1,2 +1,6 @@
+name: modelitWITHpymol-binderized
+channels:
+
+dependencies:
 - selenium
 - openjdk19-slim
