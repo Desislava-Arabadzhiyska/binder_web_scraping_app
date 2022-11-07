@@ -108,11 +108,23 @@ server <- function(input, output) {
     # reduced_comments <-list()
     # ncs <- list()
     
-    rs_driver_object <- rsDriver(browser = 'firefox',
-                                 #chromever = '106.0.5249.61',
-                                 port = 4444L, 
-                                 version = '3.141.59', 
-                                 geckover = "0.31.0")#to check which versions are available: binman::list_versions("chromedriver")
+    suc <- FALSE
+    p <- 4444
+    while (suc == FALSE){
+    tryCatch(
+      {
+        rs_driver_object <- rsDriver(browser = 'firefox',
+                                     #chromever = '106.0.5249.61',
+                                     port = as.integer(p), 
+                                     version = '3.141.59', 
+                                     geckover = "0.31.0")
+      },
+      error=function(e){}
+    )
+      suc <- exists('rs_driver_object')
+      p <- p + 1
+      print(p)
+    }
     #activate client
     remDr <- rs_driver_object$client
     
