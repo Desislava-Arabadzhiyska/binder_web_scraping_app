@@ -14,6 +14,7 @@ library('quanteda.textplots') # for textplots
 library('wesanderson') #nicer visualization
 library('stm') #structural topic model
 library('shiny')
+library('stringi')#needed dependancy to run on binder
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
