@@ -110,7 +110,7 @@ server <- function(input, output) {
     
     rs_driver_object <- rsDriver(browser = 'firefox',
                                  #chromever = '106.0.5249.61',
-                                 port = 4567L, 
+                                 #port = 4567L, 
                                  version = '3.141.59')#to check which versions are available: binman::list_versions("chromedriver")
     #activate client
     remDr <- rs_driver_object$client
