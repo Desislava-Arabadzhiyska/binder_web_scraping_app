@@ -7,3 +7,4 @@ install.packages('quanteda.textplots') # for textplots
 install.packages('wesanderson') #nicer visualization
 install.packages('stm') #structural topic model
 install.packages('shiny')
+install.packages('stringi') #needed depandancy to run on binder
