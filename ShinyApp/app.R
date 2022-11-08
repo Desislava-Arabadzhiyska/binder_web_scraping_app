@@ -119,7 +119,8 @@ server <- function(input, output) {
                                      #chromever = '106.0.5249.61',
                                      port = as.integer(p), 
                                      version = '4.0.0-alpha-2'#, 
-                                     #geckover = "0.31.0")
+                                     #geckover = "0.31.0"
+                                    )
       },
       error=function(e){}
     )
