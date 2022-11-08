@@ -1,2 +1,2 @@
 firefox
-default-jdk
+openjdk-17-jdk
