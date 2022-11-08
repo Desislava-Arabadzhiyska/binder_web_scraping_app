@@ -16,8 +16,7 @@ library('stm') #structural topic model
 library('shiny')
 library('stringi')#needed dependancy to run on binder
 
-file.remove('/home/jovyan/.local/share/binman_seleniumserver/generic/4.0.0-alpha-2/selenium-server-standalone-4.0.0-alpha-2.jar')
-download.file("https://selenium-release.storage.googleapis.com/4.0/selenium-server-standalone-4.0.0-alpha-2.jar", file.path('/home/jovyan/.local/share/binman_seleniumserver/generic/4.0.0-alpha-2/', basename('https://selenium-release.storage.googleapis.com/4.0/selenium-server-standalone-4.0.0-alpha-2.jar')))
+
 # Define UI for application that draws a histogram
 ui <- fluidPage(
   skin = "red", #selects theme
@@ -115,8 +114,8 @@ server <- function(input, output) {
     while (suc == FALSE){
     tryCatch(
       {
-        rs_driver_object <- rsDriver(browser = 'firefox',
-                                     #chromever = '106.0.5249.61',
+        rs_driver_object <- rsDriver(browser = 'chrome',
+                                     chromever = '106.0.5249.61',
                                      port = as.integer(p), 
                                      version = '4.0.0-alpha-2'#, 
                                      #geckover = "0.31.0"
