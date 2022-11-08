@@ -12,6 +12,10 @@ echo 'install.packages(c("quanteda.textplots"),repos="http://cran.r-project.org"
 echo 'install.packages(c("stm"),repos="http://cran.r-project.org" )' | R --no-save
 echo 'install.packages(c("shiny"),repos="http://cran.r-project.org" )' | R --no-save
 
+R CMD INSTALL tidyverse_1.3.1.tar.gz
+R CMD INSTALL RSelenium_1.7.7.tar.gz
+R CMD INSTALL netstat_0.1.1.tar.gz
+
 echo 'find . -name selenium-server-4.0.0-alpha-2.jar'
 
 #cd /home/jovyan/.local/share/binman_seleniumserver/generic/4.0.0-alpha-2/
