@@ -7,7 +7,7 @@
 #Load packages
 library("tidyverse")#for data tidying etc.
 library("RSelenium")#for interacting with the webpage
-library('netstat')#for port connection
+#library('netstat')#for port connection
 library('sentimentr') # for sentiment analysis
 library('quanteda') #further text mining and nlp analysis
 library('quanteda.textplots') # for textplots
