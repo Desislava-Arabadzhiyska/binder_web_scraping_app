@@ -1,4 +1,3 @@
-apt-get install -y -q \
-    firefox \
-    openjdk-17-jdk \
-    openjdk-17-jre \
+firefox
+openjdk-17-jdk
+openjdk-17-jre
