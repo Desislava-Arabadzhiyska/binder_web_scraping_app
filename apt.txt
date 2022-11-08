@@ -1,1 +1,4 @@
+wget 
+build-essential
+maven
 openjdk-17-jdk
