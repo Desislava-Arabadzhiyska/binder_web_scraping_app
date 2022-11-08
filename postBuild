@@ -1,7 +1,16 @@
 #!/bin/bash
 set -e
 
-echo 'install.packages(c("RSelenium"),repos="http://cran.r-project.org" )' | R --no-save
+#echo 'install.packages(c("RSelenium"),repos="http://cran.r-project.org" )' | R --no-save
+echo 'wget http://cran.r-project.org/src/contrib/Archive/tidyverse/tidyverse_1.3.1.tar.gz'
+echo 'wget http://cran.r-project.org/src/contrib/Archive/RSelenium/RSelenium_1.7.7.tar.gz'
+echo 'wget http://cran.r-project.org/src/contrib/Archive/netstat/netstat_0.1.1.tar.gz'
+echo 'install.packages(c("sentimentr"),repos="http://cran.r-project.org" )' | R --no-save
+echo 'install.packages(c("quanteda"),repos="http://cran.r-project.org" )' | R --no-save
+echo 'install.packages(c("wesanderson"),repos="http://cran.r-project.org" )' | R --no-save
+echo 'install.packages(c("quanteda.textplots"),repos="http://cran.r-project.org" )' | R --no-save
+echo 'install.packages(c("stm"),repos="http://cran.r-project.org" )' | R --no-save
+echo 'install.packages(c("shiny"),repos="http://cran.r-project.org" )' | R --no-save
 
 echo 'find . -name selenium-server-4.0.0-alpha-2.jar'
 
