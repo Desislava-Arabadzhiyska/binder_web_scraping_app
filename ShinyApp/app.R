@@ -109,24 +109,24 @@ server <- function(input, output) {
     # reduced_comments <-list()
     # ncs <- list()
     
-    suc <- FALSE
-    p <- 4567
-    while (suc == FALSE){
-    tryCatch(
-      {
-        rs_driver_object <- rsDriver(browser = 'firefox',
+    #suc <- FALSE
+    #p <- 4567
+    #while (suc == FALSE){
+    #tryCatch(
+     # {
+        rs_driver_object <- rsDriver(browser = 'firefox'#,
                                      #chromever = '106.0.5249.61',
-                                     port = as.integer(p), 
-                                     version = '4.0.0-alpha-2'#, 
+                                     #port = as.integer(p), 
+                                     #version = '4.0.0-alpha-2'#, 
                                      #geckover = "0.31.0"
                                     )
-      },
-      error=function(e){}
-    )
-      suc <- exists('rs_driver_object')
-      p <- p + 1
-      print(p)
-    }
+      #},
+      #error=function(e){}
+    #)
+     # suc <- exists('rs_driver_object')
+     # p <- p + 1
+      #print(p)
+    #}
     #activate client
     remDr <- rs_driver_object$client
     
