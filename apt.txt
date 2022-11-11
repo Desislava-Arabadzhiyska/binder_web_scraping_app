@@ -1,4 +1,2 @@
 firefox
-openjdk-17-jdk
-unzip xvfb libxi6 libgconf-2-4
-
+default-jdk
