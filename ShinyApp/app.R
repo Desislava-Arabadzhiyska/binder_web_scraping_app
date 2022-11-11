@@ -114,8 +114,8 @@ server <- function(input, output) {
     while (suc == FALSE){
     tryCatch(
       {
-        rs_driver_object <- rsDriver(browser = 'chrome',
-                                     chromever = '106.0.5249.61',
+        rs_driver_object <- rsDriver(browser = 'firefox',
+                                     #chromever = '106.0.5249.61',
                                      port = as.integer(p), 
                                      version = '4.0.0-alpha-2'#, 
                                      #geckover = "0.31.0"
