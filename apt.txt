@@ -1,4 +1,2 @@
-wget 
-build-essential
-maven
+firefox
 openjdk-17-jdk
