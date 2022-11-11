@@ -1,2 +1,4 @@
 firefox
 openjdk-17-jdk
+unzip xvfb libxi6 libgconf-2-4
+wget https://selenium-release.storage.googleapis.com/3.13/selenium-server-standalone-3.13.0.jar
