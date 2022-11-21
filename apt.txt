@@ -11,3 +11,7 @@ libssl-dev
 libcurl4-openssl-dev
 libfreetype6-dev
 libxml2-dev
+unzip
+xvfb
+libxi6
+libgconf-2-4
