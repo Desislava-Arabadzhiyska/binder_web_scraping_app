@@ -1,20 +1,6 @@
 channels:
   - default
-  - conda-forge
 dependencies:
-  # Python
-  - geckodriver
-  - matplotlib
-  - numpy
-  - pandas
-  - pip
-  - pytorch
-  - selenium
-  - transformers
-  # Python via pip
-  - pip:
-      - bert
-  # R
   - r-base>=4.0
   - r-caret
   - r-data.table
@@ -61,3 +47,8 @@ dependencies:
   - r-word2vec
   - r-wordcloud
   - r-xml2
+  - r-quanteda.textplots
+  - r-wesanderson
+  - r-stm
+  - r-shiny
+  - r-stringi
