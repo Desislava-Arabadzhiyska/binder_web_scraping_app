@@ -7,7 +7,7 @@
 #Load packages
 library("tidyverse")#for data tidying etc.
 library("RSelenium")#for interacting with the webpage
-#library('netstat')#for port connection
+library("wdman")
 library('sentimentr') # for sentiment analysis
 library('quanteda') #further text mining and nlp analysis
 library('quanteda.textplots') # for textplots
@@ -102,17 +102,21 @@ server <- function(input, output) {
     xtra_words <- c("much", "can", "just", "get", "also", "may", "really", "make", "go", "thing")#to be removed
     
  
-
+remDr <- RSelenium::remoteDriver(
+  remoteServerAddr = "localhost",
+  port = 4445L,
+  browserName = "firefox"
+)
   
-        rs_driver_object <- rsDriver(browser = 'firefox'#,
+        #rs_driver_object <- rsDriver(browser = 'firefox'#,
                                      #chromever = '106.0.5249.61',
                                      #port = as.integer(p), 
                                      #version = '4.0.0-alpha-2'#, 
                                      #geckover = "0.31.0"
-                                    )
+       #                             )
      
     #activate client
-    remDr <- rs_driver_object$client
+    #remDr <- rs_driver_object$client
     
     for (w in 1:2){
       #Navigate to website
