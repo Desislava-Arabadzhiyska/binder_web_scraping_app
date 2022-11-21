@@ -7,3 +7,7 @@ install.packages('wesanderson') #nicer visualization
 install.packages('stm') #structural topic model
 install.packages('shiny')
 install.packages('stringi') #needed depandancy to run on binder
+install.packages('rcurl')
+install.packages('wdman')
+install.packages('webdriver')
+install.packages('httr')
