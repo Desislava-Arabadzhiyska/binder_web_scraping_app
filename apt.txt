@@ -1,6 +1,7 @@
-default-jre
-default-jdk
-firefox
+unzip
+xvfb
+libxi6
+libgconf-2-4
 libopenblas-base
 libgsl-dev
 libgsl0-dev
@@ -11,7 +12,6 @@ libssl-dev
 libcurl4-openssl-dev
 libfreetype6-dev
 libxml2-dev
-unzip
-xvfb
-libxi6
-libgconf-2-4
+default-jre
+default-jdk
+firefox
