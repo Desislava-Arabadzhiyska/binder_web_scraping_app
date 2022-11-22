@@ -7,7 +7,6 @@
 #Load packages
 library("tidyverse")#for data tidying etc.
 library("RSelenium")#for interacting with the webpage
-library('netstat')#for port connection
 library('sentimentr') # for sentiment analysis
 library('quanteda') #further text mining and nlp analysis
 library('quanteda.textplots') # for textplots
@@ -99,17 +98,9 @@ server <- function(input, output) {
     
     xtra_words <- c("much", "can", "just", "get", "also", "may", "really", "make", "go", "thing")#to be removed
     
-    #storage
-    
-    # mydfm <- list()
-    # freq_dat <- list()
-    # model.stm <- list()
-    # reduced_comments <-list()
-    # ncs <- list()
     
     rs_driver_object <- rsDriver(browser = 'firefox',
-                                 #chromever = '106.0.5249.61',
-                                 port = free_port())#to check which versions are available: binman::list_versions("chromedriver")
+                                 port = 4445L)#
     #activate client
     remDr <- rs_driver_object$client
     
