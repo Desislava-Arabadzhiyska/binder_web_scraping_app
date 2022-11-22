@@ -7,4 +7,4 @@
 wget https://github.com/mozilla/geckodriver/releases/download/v0.25.0/geckodriver-v0.25.0-linux64.tar.gz
 tar xzf geckodriver-v0.25.0-linux64.tar.gz
 wget https://selenium-release.storage.googleapis.com/3.141/selenium-server-standalone-3.141.59.jar
-DISPLAY=:1 xvfb-run java -jar ~application/java-archive/selenium/selenium-server-standalone-3.141.59.jar
+DISPLAY=:1 xvfb-run java -jar ~/selenium/selenium-server-standalone-3.141.59.jar
