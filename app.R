@@ -99,8 +99,14 @@ server <- function(input, output) {
     xtra_words <- c("much", "can", "just", "get", "also", "may", "really", "make", "go", "thing")#to be removed
     
     
-    rs_driver_object <- rsDriver(browser = 'firefox',
-                                 port = 4445L)#
+        for (i in 1:10){
+    rs_driver_object <- rsDriver(browser = 'firefox')#
+    Sys.sleep(2)
+    }
+    rm(rs_driver_object)
+    file.remove("/home/jovyan/.local/share/binman_seleniumserver/generic/4.0.0-alpha-2/selenium-server-standalone-4.0.0-alpha-2.jar")
+    file.rename(from="/home/jovyan/selenium-server-standalone-4.0.0-alpha-2.jar",to="/home/jovyan/.local/share/binman_seleniumserver/generic/4.0.0-alpha-2/selenium-server-standalone-4.0.0-alpha-2.jar")
+    rs_driver_object <- rsDriver(browser = 'firefox')#
     #activate client
     remDr <- rs_driver_object$client
     
