@@ -115,6 +115,7 @@ server <- function(input, output) {
     rm(rs_driver_object)
     file.remove("/home/jovyan/.local/share/binman_seleniumserver/generic/4.0.0-alpha-2/selenium-server-standalone-4.0.0-alpha-2.jar")
     file.rename(from="/home/jovyan/selenium-server-standalone-4.0.0-alpha-2.jar",to="/home/jovyan/.local/share/binman_seleniumserver/generic/4.0.0-alpha-2/selenium-server-standalone-4.0.0-alpha-2.jar")
+    file.rename(from="/home/jovyan/geckodriver-v0.32.0-linux64.tar",to="/home/jovyan/.local/share/binman_geckodriver/linux64/0.32.0/geckodriver-v0.32.0-linux64.tar")
     rs_driver_object <- rsDriver(browser = 'phantomjs')#
     #activate client
     remDr <- rs_driver_object$client
