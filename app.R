@@ -100,7 +100,14 @@ server <- function(input, output) {
     
     i <- 1
     while (exists('rs_driver_object')== FALSE){
-    rs_driver_object <- rsDriver(browser = 'firefox')#
+      tryCatch(
+        {
+          rs_driver_object <- rsDriver(browser = 'firefox')#
+          message("Successfully connected.")
+        },
+        error=function(e){}
+      )
+    
     Sys.sleep(2)
     print(i)
     i <- i+1
